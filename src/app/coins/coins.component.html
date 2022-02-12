@@ -1,0 +1,56 @@
+<div class="navbar">
+    <div class="navbrand">
+    <p>Coin Ninjas 🥷</p>
+    </div>
+    <div class="search_bar">
+        <form [formGroup]="search" (ngSubmit)="onSearch(search)">
+        <input id="search_box" type="text" name="id" 
+            placeholder="Enter Crypto Currency Name" formControlName="id">
+        <input id="btn" type="submit" value="Search">
+        </form>
+    </div>
+</div>
+    
+
+<div>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Market Capital</th>
+            <th>Price Change in 24h</th>
+            <th>Price Change in 30d</th>
+            <th>Price
+                <button class="price_btn" *ngIf="isUSD" (click)="onChange()">Change to INR</button>
+                <button class="price_btn" *ngIf="!isUSD" (click)="onChange()">Change to USD</button>
+            </th>
+        </tr>
+        <tr class="search_result" *ngIf="found">
+            <td style="font-weight: 700;">{{searchData[0].market_cap_rank}}</td>
+            <td style="font-weight: 700;">{{searchData[0].symbol}}</td>
+            <td class="name_logo"><img src="{{searchData[0].image}}" alt=""><p class="name">{{searchData[0].name}}</p></td>
+            <td *ngIf="isUSD">${{searchData[0].market_cap}}</td>
+            <td *ngIf="!isUSD">₹{{searchData[0].market_cap}}</td>
+            <td *ngIf="isUSD">${{searchData[0].price_change_percentage_24h_in_currency}}</td>
+            <td *ngIf="!isUSD">₹{{searchData[0].price_change_percentage_24h_in_currency}}</td>
+            <td *ngIf="isUSD">${{searchData[0].price_change_percentage_30d_in_currency}}</td>
+            <td *ngIf="!isUSD">₹{{searchData[0].price_change_percentage_30d_in_currency}}</td>
+            <td *ngIf="isUSD">${{searchData[0].current_price}}</td>
+            <td *ngIf="!isUSD">₹{{searchData[0].current_price}}</td>
+        </tr>
+        <tr *ngFor="let i of data">
+          <td style="font-weight: 700;">{{i.market_cap_rank}}</td>
+          <td style="font-weight: 700;">{{i.symbol}}</td>
+          <td class="name_logo"><img src="{{i.image}}" alt=""><p class="name">{{i.name}}</p></td>
+          <td *ngIf="isUSD">${{i.market_cap}}</td>
+          <td *ngIf="!isUSD">₹{{i.market_cap}}</td>
+          <td *ngIf="isUSD">${{i.price_change_percentage_24h_in_currency}}</td>
+          <td *ngIf="!isUSD">₹{{i.price_change_percentage_24h_in_currency}}</td>
+          <td *ngIf="isUSD">${{i.price_change_percentage_30d_in_currency}}</td>
+          <td *ngIf="!isUSD">₹{{i.price_change_percentage_30d_in_currency}}</td>
+          <td *ngIf="isUSD">${{i.current_price}}</td>
+          <td *ngIf="!isUSD">₹{{i.current_price}}</td>
+        </tr>
+    </table>
+</div>

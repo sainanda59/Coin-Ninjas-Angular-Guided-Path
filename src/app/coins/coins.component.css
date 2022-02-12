@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&family=Kaushan+Script&display=swap');
+
+.navbar{
+    height: 10vh;
+    background-color:rgb(253, 186, 60);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbrand{
+    margin-left: 10px;
+    font-size: 45px;
+    font-weight: 800;
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 3px;
+}
+
+.search_bar{
+    margin-right: 10px;
+}
+
+#search_box{
+    height: 30px;
+    width: 200px;
+    outline: none;
+    border-radius: 10px 0 0 10px;
+}
+#btn{
+    outline: none;
+    height: 35.5px;
+    border-radius: 0 10px 10px 0;
+    background-color: brown;
+    color: white;
+}
+
+.price_btn{
+    height: 35.5px;
+    border-radius: 10px;
+    background-color: brown;
+    color: white;
+}
+
+
+img{
+    margin-right: 30px;
+    height: 40px;
+    width: 40px;
+}
+.name{
+    font-weight: 700;
+}
+.name_logo{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+th{
+    background-color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+td{
+    border: 1px solid #dddddd;
+}
+
+td,th{
+text-align: left;
+padding: 10px;
+}
+
+tr:nth-child(even){
+    background-color: #dddddd;
+}
+
+.search_result{
+    background-color: coral !important;
+}
